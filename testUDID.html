@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1265">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Courier; color: #dd1144}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Courier; color: #000080}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Courier; color: #333333}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Courier; color: #999988}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 18.0px; font: 12.0px Courier; color: #333333; min-height: 14.0px}
+    span.s1 {color: #000080}
+    span.s2 {color: #333333}
+    span.s3 {color: #008080}
+    span.s4 {color: #dd1144}
+    span.s5 {color: #0086b3}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;html</span><span class="s2"> </span><span class="s3">xmlns=</span>"http://www.w3.org/1999/xhtml"<span class="s1">&gt;</span></p>
+<p class="p2">&lt;head&gt;</p>
+<p class="p1"><span class="s1">&lt;meta</span><span class="s2"> </span><span class="s3">http-equiv=</span>"Content-Type"<span class="s2"> </span><span class="s3">content=</span>"text/html; charset=UTF-8"<span class="s2"> </span><span class="s1">/&gt;</span></p>
+<p class="p3"><span class="s1">&lt;title&gt;</span>crossdomain-openudid.html<span class="s1">&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1">&lt;script </span><span class="s3">src=</span>"http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"<span class="s2"> </span><span class="s3">type=</span>"text/javascript"<span class="s1">&gt;&lt;/script&gt;</span><span class="s2"><span class="Apple-converted-space"> </span></span></p>
+<p class="p2">&lt;script&gt;</p>
+<p class="p3"><b>function</b> UDIDfromHash(){</p>
+<p class="p3"><span class="Apple-tab-span">	</span><b>var</b> h <b>=</b> self.location.hash;</p>
+<p class="p3"><span class="Apple-tab-span">	</span><b>if</b>(h.indexOf(<span class="s4">'pipeOpenUDID_'</span>)){</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><b>var</b> udid <b>=</b> h.substr(h.indexOf(<span class="s4">'pipeOpenUDID_'</span>)<b>+</b><span class="s4">'pipeOpenUDID_'</span>.length);</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><b>try</b>{</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>alert(<span class="s4">"OpenUDID : "</span><b>+</b>udid);</p>
+<p class="p4"><span class="s2"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><i>//do something with udid</i></p>
+<p class="p4"><span class="s2"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><i>//parent.openudid_found(udid);</i></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><b>return</b> <b>true</b>;</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}<b>catch</b>(ex){</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>alert(ex);</p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</p>
+<p class="p5"><br></p>
+<p class="p3"><span class="Apple-tab-span">	</span>}</p>
+<p class="p3"><span class="Apple-tab-span">	</span><b>return</b> <b>false</b>;</p>
+<p class="p3">}</p>
+<p class="p3">$(<b>function</b>(){</p>
+<p class="p3"><span class="Apple-tab-span">	</span><b>if</b>(<b>!</b>UDIDfromHash()){</p>
+<p class="p3"><span class="Apple-tab-span">	</span>$(<span class="s5">window</span>).bind(<span class="s4">'hashchange'</span>,<b>function</b>(){</p>
+<p class="p4"><span class="s2"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span><i>///alert(self.location.hash);</i></p>
+<p class="p3"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>UDIDfromHash();</p>
+<p class="p3"><span class="Apple-tab-span">	</span>});</p>
+<p class="p3"><span class="Apple-tab-span">	</span>}</p>
+<p class="p3">});</p>
+<p class="p2">&lt;/script&gt;</p>
+<p class="p2">&lt;/head&gt;</p>
+<p class="p5"><br></p>
+<p class="p2">&lt;body&gt;</p>
+<p class="p1"><span class="s1">&lt;div</span><span class="s2"> </span><span class="s3">id=</span>""<span class="s2"> </span><span class="s3">style=</span>"overflow:hidden; width:1px; height:1px; margin:2px;"<span class="s1">&gt;</span></p>
+<p class="p1"><span class="s1">&lt;iframe</span><span class="s2"> </span><span class="s3">id=</span>"iframe"<span class="s2"> </span><span class="s3">src=</span>"http://openudid.net/js/openudid.php"<span class="s1">&gt;&lt;/iframe&gt;</span></p>
+<p class="p2">&lt;/div&gt;</p>
+<p class="p2">&lt;/body&gt;</p>
+<p class="p2">&lt;/html&gt;</p>
+</body>
+</html>
